@@ -8,7 +8,7 @@ const count = ref(0)
 <template>
   <section id="center">
     <div class="hero">
-      <img :src="charaNad09Img" class="base"  alt="" />
+      <img :src="charaNad09Img" class="base"  width="718" height="440"alt="" />
       
     </div>
     <div>

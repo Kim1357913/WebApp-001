@@ -7,7 +7,14 @@ import skill2Icon from '../assets/chara-img/Talent_Memo-_Survival_Guide_in_Extre
 import talent1Icon from '../assets/chara-img/Talent_Field_Observation_Notes.webp'
 import Charactor from './charactor.vue'
 const isHovered  = ref(false)
-
+const stats = reactive([
+  { label: 'A', value: 100 },
+  { label: 'B', value: 100 },
+  { label: 'C', value: 100 },
+  { label: 'D', value: 100 },
+  { label: 'E', value: 100 },
+  { label: 'F', value: 100 }
+])
 const mouseOverAction = () => {
   isHovered.value = true
 }
@@ -52,19 +59,7 @@ const skillDMG = computed(() => {
      </a>
         
     </ul>
-    <div>
-      <h2>元素スキル</h2>
-      <p> ルミのやっふー作戦
-       <div>スキル選択: {{ スキル選択 }}</div>
-
-     <select v-model="スキル選択">
-      <option disabled value="">Please select one</option>
-      <option>スキル1</option>
-      <option>スキル2</option>
-      <option>スキル3</option>
-     </select>
-      <code>スキルダメージ</code>ポコポコハンマー172.8%×2 ({{skillDMG}})</p>
-    </div>
+    
     
   </section>
 
@@ -72,6 +67,25 @@ const skillDMG = computed(() => {
 
   <section id="next-steps">
     <div id="docs">
+      <div v-for="stat in stats">
+        <label>{{stat.label}}</label>
+        <input type="range" v-model="stat.value" min="0" max="100">
+        <span>{{stat.value}}</span>
+        <button @click="remove(stat)" class="remove">X</button>
+      </div>
+      <div>
+        <p>元素スキル</p>
+        <p> ルミのやっふー作戦
+      <div>スキル選択: {{ スキル選択 }}</div>
+
+      <select v-model="スキル選択">
+        <option disabled value="">Please select one</option>
+        <option>スキル1</option>
+        <option>スキル2</option>
+        <option>スキル3</option>
+      </select>
+      <code>スキルダメージ</code>ポコポコハンマー172.8%×2 ({{skillDMG}})</p>
+    </div>
       <svg class="icon" role="presentation" aria-hidden="true">
         <use href="/icons.svg#documentation-icon"></use>
       </svg>

@@ -217,6 +217,11 @@ code {
       padding: 24px 20px;
     }
   }
+  label {
+  display: inline-block;
+  margin-left: 10px;
+  width: 20px;
+ } 
 
   .icon {
     margin-bottom: 16px;

@@ -203,8 +203,6 @@ code {
   }
 }
 
-
-
 #next-steps {
   display: flex;
   border-top: 1px solid var(--border);
@@ -220,7 +218,7 @@ code {
   label {
   display: inline-block;
   margin-left: 10px;
-  width: 20px;
+  width: 120px;
  } 
 
   .icon {

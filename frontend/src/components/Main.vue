@@ -6,8 +6,9 @@ import skill1Icon from '../assets/Char-Nad-09/Talent_Countermeasure-_Lumi21.webp
 import skill2Icon from '../assets/Char-Nad-09/Talent_Memo-_Survival_Guide_in_Extreme_Conditions.webp'
 import talent1Icon from '../assets/Char-Nad-09/Talent_Field_Observation_Notes.webp'
 import Charactor from './Char-Nad-09.vue'
-import DemoGrid from './Grid.vue'
-import Equipment from './Equipment.vue'
+import demoGrid from './Grid.vue'
+import calcDmg from './CalcDmg.vue/index.js'
+import 
 const isHovered  = ref(false)
 const mouseOverAction = () => {
   isHovered.value = true
@@ -56,24 +57,32 @@ const gridData = [
 
   <div class="ticks"></div>
 
-  <section id="next-steps">
+  <section id="next-steps">   
     <div id="docs">
-
-       <form id="search">
-    Search <input name="query" v-model="searchQuery">
-       </form>
-   <DemoGrid
-    :data="gridData"
-    :columns="gridColumns"
-    :filter-key="searchQuery">
-   </DemoGrid>
-      <div>
-        <p>元素スキル</p>
-        <p> ルミのやっふー作戦
-        
-        </p>
-        
-    </div>
+     <div class="area">
+        <input type="radio" name="tab_name" id="tab1" checked>
+        <label class="tab_class" for="tab1">タブ1</label>
+        <div class="content_class">
+          <p>タブ1のコンテンツを表示します</p>
+        </div>
+        <input type="radio" name="tab_name" id="tab2" >
+        <label class="tab_class" for="tab2">タブ2</label>
+        <div class="content_class">
+          <p>タブ2のコンテンツを表示します</p>
+        </div>
+        <input type="radio" name="tab_name" id="tab3" >
+        <label class="tab_class" for="tab3">タブ3</label>
+        <div class="content_class">
+          <p>タブ3のコンテンツを表示します</p>
+        </div>
+        <input type="radio" name="tab_name" id="tab4" >
+        <label class="tab_class" for="tab4">タブ4</label>
+        <div class="content_class">
+          <p>タブ4のコンテンツを表示します</p>
+        </div>
+     </div>
+   
+       
       <svg class="icon" role="presentation" aria-hidden="true">
         <use href="/icons.svg#documentation-icon"></use>
       </svg>
@@ -95,7 +104,7 @@ const gridData = [
       </ul>
     </div>
     <div id="social">
-     <p><Equipment /></p>
+     <p><CalcDmg /></p>
       <svg class="icon" role="presentation" aria-hidden="true">
         <use href="/icons.svg#social-icon"></use>
       </svg>

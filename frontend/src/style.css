@@ -204,7 +204,6 @@ code {
 }
 
 #next-steps {
-  display: flex;
   border-top: 1px solid var(--border);
   text-align: left;
 
@@ -239,6 +238,38 @@ code {
   @media (max-width: 1024px) {
     border-right: none;
     border-bottom: 1px solid var(--border);
+  }
+
+  .area {
+    display: flex;
+    width:500px;
+    margin:auto;
+  flex-wrap: wrap;
+  }
+  .tab_class{
+    width: calc(100%/5);
+    height: 50px;
+    background-color: rgb(40, 40, 40);
+    line-height: 50px;
+    font-size: 16px;
+    text-align: center;
+    display:block;
+    float: left;
+    order: -1;
+  }
+  input[name="tab_name"]{
+   display: none;
+  }
+  input:checked + .tab_class{
+    background-color: cadetblue;
+    color:aliceblue;
+  }
+  .content_class {
+    display: none;
+    width: 100%;
+  }
+  input:checked + .tab_class + .content_class{
+    display: block;
   }
 }
 

@@ -42,12 +42,21 @@ function sortBy(key) {
 function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
+const users = ref([
+  { name: '田中', status: 'active' },
+  { name: '佐藤', status: 'pending' }
+])
+
+const handleChange = (row) => {
+  console.log('変更された行:', row)
+}
 </script>
 
 <template>
   <table v-if="filteredData.length">
     <thead>
       <tr>
+        <th>ステータス</th>
         <th v-for="key in columns"
           @click="sortBy(key)"
           :class="{ active: sortKey == key }">
@@ -59,6 +68,14 @@ function capitalize(str) {
     </thead>
     <tbody>
       <tr v-for="entry in filteredData">
+        <td>
+          <select v-model="entry.status" @change="handleChange(entry)">
+            <option disabled value="">Please select one</option>
+            <option value="active">有効</option>
+            <option value="inactive">無効</option>
+            <option value="pending">保留</option>
+          </select>
+        </td>
         <td v-for="key in columns">
           {{entry[key]}}
         </td>
@@ -66,6 +83,26 @@ function capitalize(str) {
     </tbody>
   </table>
   <p v-else>No matches found.</p>
+    <table>
+    <thead>
+      <tr>
+        <th>名前</th>
+        <th>ステータス</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr v-for="(item, index) in users" :key="index">
+        <td>{{ item.name }}</td>
+        <td>
+          <select v-model="item.status" @change="handleChange(item)">
+            <option value="active">有効</option>
+            <option value="inactive">無効</option>
+            <option value="pending">保留</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </template>
 
 <style>

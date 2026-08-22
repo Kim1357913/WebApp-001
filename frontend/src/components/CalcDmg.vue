@@ -34,9 +34,7 @@ const skillDMG = computed(() => {
         <input type="range" v-model="stat.value" min="0" max="100">
         <span>{{stat.value}}</span>
       </div>
-  <div>スキル選択: {{ スキル選択 }}</div>
-
-
+  <!--<div>スキル選択: {{ スキル選択 }}</div>
          <select v-model="スキル選択">
         <option disabled value="">Please select one</option>
         <option>スキル1</option>
@@ -44,4 +42,5 @@ const skillDMG = computed(() => {
         <option>スキル3</option>
          </select>
          <code>スキルダメージ</code>ポコポコハンマー172.8%×2 ({{skillDMG}})({{基礎防御力 * 防御力補正}})
+-->
 </template>

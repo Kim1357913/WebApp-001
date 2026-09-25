@@ -8,11 +8,10 @@
   --accent-bg: rgba(170, 59, 255, 0.1);
   --accent-border: rgba(170, 59, 255, 0.5);
   --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --shadow: rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
+  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
 
   --spacing: 3px;
@@ -41,8 +40,7 @@
     --accent-bg: rgba(192, 132, 252, 0.15);
     --accent-border: rgba(192, 132, 252, 0.5);
     --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+    --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
   }
 
   #social .button-icon {
@@ -84,9 +82,9 @@ p {
 }
 
 @property --tw-border-style {
-    syntax: "*";
-    inherits: false;
-    initial-value: solid;
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
 }
 code,
 .counter {
@@ -125,16 +123,15 @@ code {
 .hero {
   position: relative;
 
-  .base
-  {
+  .base {
     position: relative;
     inset-inline: 0;
     margin: 0 auto;
     z-index: 0;
   }
   &:hover {
-      box-shadow: var(--shadow);
-    }
+    box-shadow: var(--shadow);
+  }
 }
 
 #app {
@@ -154,43 +151,166 @@ code {
   text-align: left;
 }
 .justify-between {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 .flex-wrap {
-    flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .flex {
-    display: flex;
+  display: flex;
 }
 
-
 div {
-    scrollbar-color: #3a7e93 #111;
-    scrollbar-width: thin;
+  scrollbar-color: #3a7e93 #111;
+  scrollbar-width: thin;
 }
 .basis-full {
   flex-basis: 100%;
 }
 @media (min-width: 640px) {
-    .sm\:block {
-        display: block;
-    }
+  .sm\:block {
+    display: block;
+  }
 }
-@media (min-width: 640px){
-  .sm\:basis-2\/5{
+@media (min-width: 640px) {
+  .sm\:basis-2\/5 {
     flex-basis: 40%;
   }
-  .sm\:basis-3\/5{
+  .sm\:basis-3\/5 {
     flex-basis: 60%;
   }
 }
 @media (min-width: 740px) {
-    .md\:basis-1\/2 {
-        flex-basis: 50%;
-    }
+  .md\:basis-1\/2 {
+    flex-basis: 50%;
+  }
 }
 
+.character-selector {
+  position: relative;
+  display: inline-block;
+}
 
+.character-button {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.character-menu {
+  position: absolute;
+  top: 35px;
+  left: 0;
+
+  width: 250px;
+  padding: 10px;
+
+  background: #222;
+  border: 1px solid #555;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+
+  z-index: 1000;
+}
+
+.character-item {
+  border: none;
+  background: transparent;
+  color: white;
+  align-items: center;
+  padding: 4px;
+  cursor: pointer;
+  gap: 4px;
+  flex-direction: column;
+  display: flex;
+}
+.character-button:hover {
+  background: hsl(219, 22%, 25%);
+}
+.character-item:hover {
+  background: #48566b;
+}
+
+.icon {
+  font-size: 30px;
+}
+.weapon-selector {
+  margin-top: 20px;
+}
+
+.weapon-selector label {
+  margin-right: 8px;
+}
+
+.weapon-selector select {
+  padding: 6px 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.selection-result {
+  margin-top: 20px;
+}
+
+.recommended-weapons li {
+  margin-top: 8px;
+}
+.basis-1\/3 {
+  flex-basis: 33.333333%;
+}
+.mb-1 {
+  margin-bottom: calc(var(--spacing) * 1);
+}
+.mb-2 {
+  margin-bottom: calc(var(--spacing) * 1);
+}
+.grid {
+  display: grid;
+}
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+.flex-auto {
+  flex: auto;
+}
+.text-center {
+  text-align: center;
+}
+.py-2 {
+  padding-block: calc(var(--spacing) * 2);
+}
+.bg-\[\#214753\] {
+  background-color: #214753;
+}
+.bg-\[\#3a7e93\] {
+  background-color: #3a7e93;
+}
+.border-\[\#060d0f\] {
+  border-color: #070e10;
+}
+.border {
+  border-width: 1px;
+  border-style: var(--tw-border-style);
+}
+.justify-center {
+  justify-content: center;
+}
+.justify-evenly {
+  justify-content: space-evenly;
+}
+
+.flex {
+  display: flex;
+}
+@media (min-width: 640px) {
+  .sm\:block {
+    display: block;
+  }
+}
 
 #top-steps ul {
   list-style: none;
@@ -222,8 +342,7 @@ div {
       width: 36px;
     }
     .skillExplain1 {
-      position: absolute; 
-
+      position: absolute;
     }
   }
 
@@ -246,9 +365,10 @@ div {
 
 #next-steps {
   border-top: 1px solid var(--border);
-/*ここにあるtext-align:leftで中の要素が真ん中にできなかった→解決法は何だろう
+  /*ここにあるtext-align:leftで中の要素が真ん中にできなかった→解決法は何だろう
 親のところで競合していたので、親側であればあるほど設計は計画的にする*/
-  & > div { /*親要素の直下*/
+  & > div {
+    /*親要素の直下*/
     flex: 1 1 0;
     padding: 32px;
     @media (max-width: 1024px) {
@@ -256,10 +376,10 @@ div {
     }
   }
   label {
-  display: inline-block;
-  margin-left: 10px;
-  width: 120px;
- } 
+    display: inline-block;
+    margin-left: 10px;
+    width: 120px;
+  }
 
   .icon {
     margin-bottom: 16px;
@@ -279,57 +399,30 @@ div {
     border-right: none;
     border-bottom: 1px solid var(--border);
   }
-  .mb-1 {
-    margin-bottom: calc(var(--spacing) * 1);
-  }
-  .grid {
-  display: grid;
-  }
-  .grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .flex-auto {
-    flex:auto;
-  }
-  .text-center {
-    text-align: center;
- }
- .py-2 {
-    padding-block: calc(var(--spacing) * 2);
- }
- .bg-\[\#214753\] {
-    background-color: #214753;
- }
- .border-\[\#060d0f\] {
-    border-color: #070e10;
- }
- .border{
-    border-width: 1px;
-    border-style: var(--tw-border-style);
-}
-  .tab_class{
-    width: calc(100%/5);
+
+  .tab_class {
+    width: calc(100% / 5);
     height: 50px;
     background-color: rgb(40, 40, 40);
     line-height: 50px;
     font-size: 16px;
     text-align: center;
-    display:block;
+    display: block;
     float: left;
     order: -1;
   }
-  input[name="tab_name"]{
-   display: none;
+  input[name="tab_name"] {
+    display: none;
   }
-  input:checked + .tab_class{
+  input:checked + .tab_class {
     background-color: cadetblue;
-    color:aliceblue;
+    color: aliceblue;
   }
   .content_class {
     display: none;
     width: 100%;
   }
-  input:checked + .tab_class + .content_class{
+  input:checked + .tab_class + .content_class {
     display: block;
   }
 }
@@ -401,7 +494,9 @@ div {
   height: 140px;
   border-radius: 50%;
   border: 5px solid #0d191a;
-  box-shadow: 0 0 0 1px #52736d, 0 8px 18px rgba(0, 0, 0, 0.3);
+  box-shadow:
+    0 0 0 1px #52736d,
+    0 8px 18px rgba(0, 0, 0, 0.3);
 }
 
 .pie-chart::after {
@@ -435,13 +530,13 @@ div {
   border-radius: 50%;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 720px) {
   .chart-layout {
     grid-template-columns: 1fr;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   .damage-charts {
     padding: 14px;
   }
@@ -520,7 +615,7 @@ div {
 
   &::before,
   &::after {
-    content: '';
+    content: "";
     position: absolute;
     top: -4.5px;
     border: 5px solid transparent;
